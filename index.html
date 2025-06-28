@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Knowledge Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <h1 class="quiz-title">🧠 Fun Knowledge Quiz</h1>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+            <div class="question-counter">
+                <span id="current-question">1</span> of <span id="total-questions">5</span>
+            </div>
+        </div>
+
+        <div class="quiz-content" id="quiz-content">
+            <div class="question-section">
+                <h2 class="question-text" id="question-text"></h2>
+                <div class="options-container" id="options-container">
+                    <!-- Options will be dynamically generated -->
+                </div>
+            </div>
+            
+            <div class="quiz-controls">
+                <button class="btn btn-next" id="next-btn" onclick="nextQuestion()" disabled>
+                    Next Question
+                </button>
+            </div>
+        </div>
+
+        <div class="results-screen" id="results-screen" style="display: none;">
+            <div class="results-content">
+                <h2 class="results-title">🎉 Quiz Complete!</h2>
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span class="score-text" id="final-score">0/5</span>
+                        <span class="score-percentage" id="score-percentage">0%</span>
+                    </div>
+                </div>
+                <div class="performance-message" id="performance-message"></div>
+                <div class="results-controls">
+                    <button class="btn btn-restart" onclick="restartQuiz()">
+                        🔄 Take Quiz Again
+                    </button>
+                    <button class="btn btn-review" onclick="showReview()">
+                        📋 Review Answers
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="review-screen" id="review-screen" style="display: none;">
+            <div class="review-content">
+                <h2 class="review-title">📋 Answer Review</h2>
+                <div class="review-questions" id="review-questions">
+                    <!-- Review content will be dynamically generated -->
+                </div>
+                <button class="btn btn-back" onclick="backToResults()">
+                    ← Back to Results
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
